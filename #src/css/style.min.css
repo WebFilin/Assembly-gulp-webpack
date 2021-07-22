@@ -1,0 +1,24 @@
+.header {
+  font-size: 30px;
+  color: yellowgreen;
+}
+
+.main {
+  color: red;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 34;
+  grid-column: 34;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-row: 34;
+  grid-area: 34;
+}
+
+.pict {
+  width: 50%;
+}

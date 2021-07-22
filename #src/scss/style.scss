@@ -1,0 +1,38 @@
+// Миксины для автоматизации процессов
+
+//Автоматическая подключалка шрифтов в сборке - жека
+@mixin font($font_name, $file_name, $weight, $style) {
+   @font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("/fonts/#{$file_name}.woff") format("woff"), url("/fonts/#{$file_name}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+
+// Фаил подключения шрифтов
+@import "fonts";
+
+// Тест сервера сервера для Gulp
+
+.header {
+   font-size: 30px;
+   color: yellowgreen;
+}
+
+.main {
+   color: red;
+   font-size: 20px;
+   display: flex;
+   display: grid;
+   grid-column: 34;
+   grid-template-columns: auto;
+   grid-area: 34;
+}
+
+.pict {
+   width: 50%;
+}
+
+// рабочие стили сайта
