@@ -1,5 +1,4 @@
 // Миксины для автоматизации процессов
-
 //Автоматическая подключалка шрифтов в сборке - жека
 @mixin font($font_name, $file_name, $weight, $style) {
    @font-face {
@@ -11,6 +10,12 @@
    }
 }
 
+// Обнулялко
+@import "../scss/zerostyle.scss";
+
+// Метод картинок ibg - при написанном теге придает вставленной в HTML картинке свойвто бэкграунд
+@import "../scss/metod_ibg.scss";
+
 // Фаил подключения шрифтов
 @import "fonts";
 
@@ -18,7 +23,8 @@
 
 .header {
    font-size: 30px;
-   color: yellowgreen;
+   color: blue;
+   font-family: "SEGA";
 }
 
 .main {
