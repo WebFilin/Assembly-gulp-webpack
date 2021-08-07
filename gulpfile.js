@@ -1,5 +1,13 @@
+// Очистка папки с картинками в build - gulp cleanImg
+// конвектр шрифтов из otf в ttf - вызов отдельно -  gulp otf2ttf 
+// Оптимизация иконок и сборка их в фаил - отдельный вызов командой  gulp svgSprite
+// Автоматическbq перенос шрифтов в css -  gulp fontsStyle
+// Очистка ВСЕЙ сборки -   gulp clean
+// Сборка фаила js на прод - gulp webpackProd
+// Сборка фаила js в режиме отладки  - gulp webpackDev
+
 let project_folder = require("path").basename(__dirname);
-let source_folder = "#src";
+let source_folder = "src";
 const { on } = require("events");
 let fs = require('fs');
 
@@ -51,7 +59,7 @@ let { src, dest } = require('gulp'),
    fonter = require('gulp-fonter'),
    newer = require('gulp-newer'),
    sourcemaps = require('gulp-sourcemaps'),
-   // jquery шоб было в сборке сразу
+   //шоб было в сборке сразу - подключается автоматом при компеляции
    jquery = require('jquery'),
    webpack = require('webpack-stream');
 
@@ -241,7 +249,7 @@ function clean() {
 
 };
 
-let build = gulp.series(clean, gulp.parallel(webpackProd, css, html, images, fonts), webpackDev, fontsStyle);
+let build = gulp.series(clean, gulp.parallel(css, html, images, fonts), webpackDev, webpackProd, fontsStyle);
 let watch = gulp.parallel(build, watchFile, browserSync);
 
 exports.webpackProd = webpackProd;
@@ -262,4 +270,4 @@ exports.default = watch;
 // Автоматическbq перенос шрифтов в css -  gulp fontsStyle
 // Очистка ВСЕЙ сборки -   gulp clean
 // Сборка фаила js на прод - gulp webpackProd
-//  Сборка фаила js в режиме отладки  - gulp webpackDev
+// Сборка фаила js в режиме отладки  - gulp webpackDev

@@ -1,0 +1,21 @@
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wraper-main {
+  color: green;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 34;
+  grid-column: 34;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-row: 34;
+  grid-area: 34;
+}
